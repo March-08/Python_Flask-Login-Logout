@@ -1,0 +1,12 @@
+ <ul>
+   <li><a href={{url_for("root")}}>Home</a></li>
+
+     {%if session["logged_in"]!= True%}
+     <li><a href={{url_for("register")}}>register</a></li>
+     <li><a href={{url_for("login")}}>Login</a></li>
+     {%endif%}
+
+     {% if session["logged_in"]==True %}
+        <li><a href={{url_for("log_out")}}>Logout</a></li>
+     {%endif%}
+</ul> 
